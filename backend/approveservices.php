@@ -13,4 +13,6 @@ $query->bind_param('iissi',$patient,$employee,$descripition.$service_id,$departm
 $query->execute();
 $response['Status']='Service has been requested';
 
+echo json_encode($response);
+
 ?>
