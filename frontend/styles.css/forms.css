@@ -5,16 +5,6 @@
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: all;
-  src: url(../assets/print-clearly/print_clearly_ot.otf);
-}
-
-@font-face {
-  font-family: bold;
-  src: url(../assets/print-clearly/print_bold_ot.otf);
-}
-
 .page {
   height: 100vh;
   display: flex;
@@ -52,7 +42,7 @@
 .title {
   font-size: 40px;
   color: rgb(36, 122, 10);
-  font-family: bold;
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: center;
 }
@@ -102,12 +92,12 @@ button:active {
 label {
   font-size: 20px;
   color: rgb(36, 122, 10);
-  font-family: bold;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .link {
   color: rgb(36, 122, 10);
-  font-family: all;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
 }
 

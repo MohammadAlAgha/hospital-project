@@ -5,16 +5,6 @@
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: all;
-  src: url(../assets/print-clearly/print_clearly_ot.otf);
-}
-
-@font-face {
-  font-family: bold;
-  src: url(../assets/print-clearly/print_bold_ot.otf);
-}
-
 .page {
   height: 100vh;
   overflow-y: hidden;
@@ -23,7 +13,7 @@
 .welcome {
   display: flex;
   justify-content: center;
-  font-family: bold;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 60px;
   color: rgb(36, 122, 10);
 }
@@ -31,7 +21,7 @@
 .choose {
   display: flex;
   justify-content: center;
-  font-family: bold;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
   color: rgb(0, 0, 0);
 }
@@ -53,8 +43,8 @@
   justify-content: space-around;
   height: 65vh;
   align-items: center;
-  font-family: bold;
-  font-size: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
 }
 
 .actions > div:hover {
