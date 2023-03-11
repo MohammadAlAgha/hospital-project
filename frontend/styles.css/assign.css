@@ -7,11 +7,12 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  overflow-y: hidden;
 }
 
 .page {
   height: 100vh;
-  margin: 10px;
+  margin: 15px;
 }
 
 .header {
@@ -49,10 +50,11 @@ p {
 }
 
 .wrapperPosition {
+  margin: 20px;
   height: 70vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
 }
 
 input {
