@@ -37,6 +37,7 @@
   border: 2px rgb(36, 122, 10) solid;
   box-shadow: 0 5px 15px rgb(36, 122, 10);
   padding: 30px;
+  border-radius: 20px;
 }
 
 .title {
