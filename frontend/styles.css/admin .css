@@ -80,12 +80,13 @@ a {
   background-repeat: no-repeat;
   background-blend-mode: multiply;
   background-size: 100%;
-  background-color: rgb(114, 114, 114);
+  background-color: rgb(92, 92, 92);
   color: aliceblue;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.5s;
+  cursor: pointer;
 }
 .assignEmployee {
   height: 150px;
@@ -94,12 +95,13 @@ a {
   background-repeat: no-repeat;
   background-blend-mode: multiply;
   background-size: 100%;
-  background-color: rgb(114, 114, 114);
+  background-color: rgb(92, 92, 92);
   color: aliceblue;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.5s;
+  cursor: pointer;
 }
 .viewServices {
   height: 150px;
@@ -108,12 +110,13 @@ a {
   background-repeat: no-repeat;
   background-blend-mode: multiply;
   background-size: 100%;
-  background-color: rgb(114, 114, 114);
+  background-color: rgb(92, 92, 92);
   color: aliceblue;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.5s;
+  cursor: pointer;
 }
 .stats {
   height: 150px;
@@ -122,10 +125,11 @@ a {
   background-repeat: no-repeat;
   background-blend-mode: multiply;
   background-size: 100% 100%;
-  background-color: rgb(114, 114, 114);
+  background-color: rgb(92, 92, 92);
   color: aliceblue;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.5s;
+  cursor: pointer;
 }
