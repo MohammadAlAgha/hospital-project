@@ -1,0 +1,120 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: all;
+  src: url(../assets/print-clearly/print_clearly_ot.otf);
+}
+
+@font-face {
+  font-family: bold;
+  src: url(../assets/print-clearly/print_bold_ot.otf);
+}
+
+.page {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.welcome {
+  display: flex;
+  justify-content: center;
+  font-family: bold;
+  font-size: 60px;
+  color: rgb(36, 122, 10);
+}
+
+.choose {
+  display: flex;
+  justify-content: center;
+  font-family: bold;
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+}
+
+.header {
+  display: flex;
+  justify-content: start;
+  margin-bottom: 10px;
+}
+
+.logo {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+  height: 65vh;
+  align-items: center;
+  font-family: bold;
+  font-size: 35px;
+}
+
+.actions > div:hover {
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+
+.assignPatient {
+  height: 150px;
+  width: 300px;
+  background-image: url(../assets/patient.jfif);
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-size: 100%;
+  background-color: rgb(114, 114, 114);
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.assignEmployee {
+  height: 150px;
+  width: 300px;
+  background-image: url(../assets/employee.jfif);
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-size: 100%;
+  background-color: rgb(114, 114, 114);
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.viewServices {
+  height: 150px;
+  width: 300px;
+  background-image: url(../assets/services.jpg);
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-size: 100%;
+  background-color: rgb(114, 114, 114);
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.stats {
+  height: 150px;
+  width: 300px;
+  background-image: url(../assets/stats.jpg);
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-size: 100% 100%;
+  background-color: rgb(114, 114, 114);
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
