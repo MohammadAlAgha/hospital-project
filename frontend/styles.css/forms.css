@@ -38,7 +38,7 @@
   justify-content: center;
 }
 
-.inputs {
+.inputLogin {
   margin-top: 40px;
   display: flex;
   flex-direction: column;
@@ -90,4 +90,16 @@ label {
   color: rgb(36, 122, 10);
   font-family: all;
   font-size: 20px;
+}
+
+.inputSignUP {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80%;
+}
+
+.inputSignUP > .inputs {
+  margin: 30px;
 }
