@@ -20,12 +20,10 @@ if($rows>0){
     $response['status']='Email already exist';
 }
 else{
-    $response['status']='Login was successfull';
+    $response['status']='Sign up was successfull';
     $query=$mysqli->prepare('insert into users( email,password,name,dob,usertype_id) values(?,?,?,?,?)');
     $query->bind_param('ssssi',$email,$hashed,$user_name,$birth,$type);
     $query->execute();
 }
-
 echo json_encode($response);
-
 ?>
