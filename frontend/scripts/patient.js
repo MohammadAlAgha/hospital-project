@@ -2,6 +2,7 @@ const baseUrl = "http://localhost/hospital-project/backend";
 const profile = document.getElementById("profile");
 const serviceList = document.getElementById("serviceList");
 const meds = document.getElementById("meds");
+const hospitalNames = document.getElementById("hospitalNames");
 
 profile.addEventListener("click", () => {
   window.location.href = "./profile.html";
@@ -22,5 +23,13 @@ axios({
   const medics = res.data.meds;
   medics.forEach((med) => {
     meds.innerHTML += ` <option>${med.name}</option>`;
+  });
+});
+axios({
+  url: `${baseUrl}/gethospitals.php`,
+}).then((res) => {
+  const hospitalsArray = res.data.hospitals;
+  hospitalsArray.forEach((hospital) => {
+    hospitalNames.innerHTML += ` <option>${hospital.name}</option>`;
   });
 });
