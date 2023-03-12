@@ -12,6 +12,8 @@ const savedMedics = document.getElementById("savedMedics");
 const savedServices = document.getElementById("savedServices");
 const invoices = document.getElementById("invoices");
 
+total = {};
+
 profile.addEventListener("click", () => {
   window.location.href = "./profile.html";
 });
@@ -27,7 +29,7 @@ axios({
     selectedService = event.target.value;
   });
   submitServices.addEventListener("click", () => {
-    savedServices.innerHTML += `<p>${selectedService}</p>`;
+    savedServices.innerHTML += `<p id='servicesCollection'>${selectedService}</p>`;
   });
 });
 
@@ -42,7 +44,7 @@ axios({
     selectedMed = event.target.value;
   });
   submitMedics.addEventListener("click", () => {
-    savedMedics.innerHTML += `<p>${selectedMed}</p>`;
+    savedMedics.innerHTML += `<p id='medsCollection'>${selectedMed}</p>`;
   });
 });
 axios({
@@ -75,11 +77,30 @@ roomInfo.addEventListener("change", (Roomevent) => {
     const bedRooms = res.data.roombeds.number_beds;
     bedInfo.innerHTML = "";
     for (let index = 1; index <= bedRooms; index++) {
-      bedInfo.innerHTML += ` <option value="">${index}</option>`;
+      bedInfo.innerHTML += ` <option value="${index}">${index}</option>`;
     }
+    submitHospital.addEventListener("click", () => {
+      total.hospital = hospitalNames.value;
+      total.room = roomInfo.value;
+      total.bed = bedInfo.value;
+    });
   });
 });
 
 invoices.addEventListener("click", () => {
+  const medsCollection = document.querySelectorAll("#medsCollection");
+  medsArray = [];
+  medsCollection.forEach((med) => {
+    medsArray.push(med.innerHTML);
+  });
+  total.medics = medsArray;
+  const servicesCollection = document.querySelectorAll("#servicesCollection");
+  serviceArray = [];
+  servicesCollection.forEach((service) => {
+    serviceArray.push(service.innerHTML);
+  });
+  total.service = serviceArray;
+  localStorage.setItem("invoicesStats", JSON.stringify(total));
+
   window.location.href = "./invoices.html";
 });
