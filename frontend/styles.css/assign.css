@@ -92,3 +92,9 @@ button:active {
   width: 20%;
   box-shadow: 0 5px 15px rgb(151, 151, 151);
 }
+
+select {
+  border: rgb(36, 122, 10) 1px solid;
+  padding: 5px;
+  border-radius: 20px;
+}
