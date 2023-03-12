@@ -113,3 +113,8 @@ label {
 .inputSignUP > .inputs {
   margin: 30px;
 }
+
+.state {
+  color: red;
+  font-family: Arial, Helvetica, sans-serif;
+}
