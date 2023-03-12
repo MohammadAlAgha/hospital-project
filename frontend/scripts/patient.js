@@ -10,6 +10,7 @@ const submitMedics = document.getElementById("submitMedics");
 const submitServices = document.getElementById("submitServices");
 const savedMedics = document.getElementById("savedMedics");
 const savedServices = document.getElementById("savedServices");
+const invoices = document.getElementById("invoices");
 
 profile.addEventListener("click", () => {
   window.location.href = "./profile.html";
@@ -72,10 +73,13 @@ roomInfo.addEventListener("change", (Roomevent) => {
   body.append("id", roomId);
   axios.post(`${baseUrl}/getbedfromrooms.php`, body).then((res) => {
     const bedRooms = res.data.roombeds.number_beds;
-    console.log(bedRooms);
     bedInfo.innerHTML = "";
     for (let index = 1; index <= bedRooms; index++) {
       bedInfo.innerHTML += ` <option value="">${index}</option>`;
     }
   });
+});
+
+invoices.addEventListener("click", () => {
+  window.location.href = "./invoices.html";
 });
