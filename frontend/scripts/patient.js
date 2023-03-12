@@ -4,6 +4,7 @@ const serviceList = document.getElementById("serviceList");
 const meds = document.getElementById("meds");
 const hospitalNames = document.getElementById("hospitalNames");
 const roomInfo = document.getElementById("roomInfo");
+const bedInfo = document.getElementById("bedInfo");
 const submitHospital = document.getElementById("submitHospital");
 const submitMedics = document.getElementById("submitMedics");
 const submitServices = document.getElementById("submitServices");
@@ -48,14 +49,34 @@ axios({
 }).then((res) => {
   const hospitalsArray = res.data.hospitals;
   hospitalsArray.forEach((hospital) => {
-    hospitalNames.innerHTML += ` <option>${hospital.name}</option>`;
+    hospitalNames.innerHTML += ` <option value="${hospital.id}">${hospital.name}</option>`;
   });
 });
-axios({
-  url: `${baseUrl}/getrooms.php`,
-}).then((res) => {
-  const roomsArray = res.data.rooms;
-  roomsArray.forEach((room) => {
-    roomInfo.innerHTML += ` <option>${room.room_number}/Cost:${room.cost_day_usd}/${room.is_vip}</option>`;
+
+hospitalNames.addEventListener("change", (event) => {
+  const hospitalId = event.target.value;
+  const body = new FormData();
+  body.append("hospital_id", hospitalId);
+  axios.post(`${baseUrl}/getroomsfromhospital.php`, body).then((res) => {
+    const roomsArray = res.data.roomsdata;
+    roomInfo.innerHTML = "";
+    roomsArray.forEach((room) => {
+      roomInfo.innerHTML += ` <option value="${room.id}">${room.room_number}/Cost:${room.cost_day_usd}/${room.is_vip}</option>`;
+    });
+  });
+});
+
+roomInfo.addEventListener("change", (event) => {
+  const roomId = event.target.value;
+  console.log(event.target.value);
+  const body = new FormData();
+  body.append("id", roomId);
+  axios.post(`${baseUrl}/getroomsfromhospital.php`, body).then((res) => {
+    const bedRoomsArray = res.data;
+    console.log(bedRoomsArray);
+    bedInfo.innerHTML = "";
+    bedArray.forEach((bed) => {
+      bedInfo.innerHTML += ` <option">${bed.number_beds}</option>`;
+    });
   });
 });
