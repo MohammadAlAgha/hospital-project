@@ -66,17 +66,16 @@ hospitalNames.addEventListener("change", (event) => {
   });
 });
 
-roomInfo.addEventListener("change", (event) => {
-  const roomId = event.target.value;
-  console.log(event.target.value);
+roomInfo.addEventListener("change", (Roomevent) => {
+  const roomId = Roomevent.target.value;
   const body = new FormData();
   body.append("id", roomId);
-  axios.post(`${baseUrl}/getroomsfromhospital.php`, body).then((res) => {
-    const bedRoomsArray = res.data;
-    console.log(bedRoomsArray);
+  axios.post(`${baseUrl}/getbedfromrooms.php`, body).then((res) => {
+    const bedRooms = res.data.roombeds.number_beds;
+    console.log(bedRooms);
     bedInfo.innerHTML = "";
-    bedArray.forEach((bed) => {
-      bedInfo.innerHTML += ` <option">${bed.number_beds}</option>`;
-    });
+    for (let index = 1; index <= bedRooms; index++) {
+      bedInfo.innerHTML += ` <option value="">${index}</option>`;
+    }
   });
 });
