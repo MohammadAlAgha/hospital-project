@@ -6,7 +6,7 @@ $email=$_POST['email'];
 $password=$_POST['password'];
 $user_name=$_POST['user_name'];
 $birth=$_POST['birthday'];
-$type=3;
+$type=2;
 
 $check=$mysqli->prepare('select email from users where email=?');
 $check->bind_param('s',$email);
