@@ -23,7 +23,7 @@ axios({
 }).then((res) => {
   const services = res.data.services;
   services.forEach((service) => {
-    serviceList.innerHTML += ` <option>${service.description}</option>`;
+    serviceList.innerHTML += ` <option>${service.description}/${service.cost}$</option>`;
   });
   serviceList.addEventListener("change", (event) => {
     selectedService = event.target.value;
@@ -38,7 +38,7 @@ axios({
 }).then((res) => {
   const medics = res.data.meds;
   medics.forEach((med) => {
-    meds.innerHTML += ` <option>${med.name}</option>`;
+    meds.innerHTML += ` <option>${med.name}/${med.cost}$</option>`;
   });
   meds.addEventListener("change", (event) => {
     selectedMed = event.target.value;

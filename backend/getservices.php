@@ -3,7 +3,7 @@
 header('Access-Control-Allow-Origin: *');
 include('connection.php');
 
-$query=$mysqli->prepare('select description from services');
+$query=$mysqli->prepare('select * from services');
 $query->execute();
 
 $result=$query->get_result();

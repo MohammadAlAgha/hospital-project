@@ -11,7 +11,7 @@ $result=$query->get_result();
 
 while($object=$result->fetch_assoc()){
     $data=$object;
-}
+};
 
 $response['roombeds']=$data;
 

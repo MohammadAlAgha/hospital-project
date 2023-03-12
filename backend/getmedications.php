@@ -3,7 +3,7 @@
 header('Access-Control-Allow-Origin: *');
 include('connection.php');
 
-$query=$mysqli->prepare('select name from medications');
+$query=$mysqli->prepare('select * from medications');
 $query->execute();
 
 $result=$query->get_result();

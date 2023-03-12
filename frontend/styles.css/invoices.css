@@ -11,6 +11,7 @@ body {
 
 .page {
   height: 100vh;
+  padding: 30px;
 }
 
 .logo {
@@ -42,4 +43,52 @@ h1 {
 hr {
   border: 1px rgb(0, 0, 0) solid;
   margin: 30px 0;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+.section {
+  height: 40vh;
+  display: flex;
+  justify-content: space-around;
+  margin: 150px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+p {
+  font-size: 20px;
+  color: rgb(37, 37, 37);
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: rgb(36, 122, 10);
+  color: aliceblue;
+  padding: 5px;
+  border-radius: 10px;
+  width: 20%;
+  border: 2px rgb(36, 122, 10) solid;
+  box-shadow: 0 5px 15px rgb(36, 122, 10);
+}
+
+.submit:active {
+  transform: scale(0.98);
+}
+
+.centerButton {
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
 }
