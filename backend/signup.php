@@ -24,6 +24,13 @@ else{
     $query=$mysqli->prepare('insert into users( email,password,name,dob,usertype_id) values(?,?,?,?,?)');
     $query->bind_param('ssssi',$email,$hashed,$user_name,$birth,$type);
     $query->execute();
+    $query2=$mysqli->prepare('select id from users where email=?');
+    $query2->bind_param('s',$email);
+    $query2->execute();
+    $query2->store_result();
+    $query2->bind_result($id);
+    $query2->fetch();
+    $response['user_id'] = $id;
 }
 echo json_encode($response);
 ?>

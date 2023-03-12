@@ -15,9 +15,10 @@ submit.addEventListener("click", () => {
     axios
       .post("http://localhost/hospital-project/backend/signup.php", body)
       .then((res) => {
-        if (res.data.status == "Sign up was successfull")
+        if (res.data.status == "Sign up was successfull") {
           window.location.href = "./patient.html";
-        else state.innerHTML = res.data.status;
+          localStorage.setItem("User ID", JSON.stringify(res.data.user_id));
+        } else state.innerHTML = res.data.status;
       });
   } else {
     state.innerHTML = "Please enter the values";
