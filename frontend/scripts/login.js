@@ -13,7 +13,8 @@ submit.addEventListener("click", () => {
       if (res.data.response == "logged in") {
         user_id = res.data.user_id;
         localStorage.setItem("User ID", JSON.stringify(user_id));
-        if (res.data.type == 3) window.location.href = "./patient.html";
+        if (res.data.type == 1) window.location.href = "./admin.html";
+        else if (res.data.type == 3) window.location.href = "./patient.html";
       } else {
         state.innerHTML = res.data.status;
       }
