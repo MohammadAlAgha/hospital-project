@@ -1,6 +1,8 @@
 const back = document.getElementById("back");
 const hospitalNames = document.getElementById("hospitalNames");
 const employeeNames = document.getElementById("employeeNames");
+const submit = document.getElementById("submit");
+const state = document.getElementById("state");
 const baseUrl = "http://localhost/hospital-project/backend";
 
 back.addEventListener("click", () => {
@@ -23,5 +25,11 @@ axios({
   const employeeArray = res.data.employee;
   employeeArray.forEach((employee) => {
     employeeNames.innerHTML += ` <option>${employee.name}/ID:${employee.id}</option>`;
+  });
+});
+
+submit.addEventListener("click", () => {
+  axios.get(`${baseUrl}/assignemployee.php`).then((res) => {
+    state.innerHTML = "Employee Assigned";
   });
 });
