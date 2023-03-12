@@ -26,7 +26,7 @@ if ($email_exists == 0) {
             $response['email'] = $email;
             $response['type'] = $type;
         } else {
-            $response["response"] = "Wrong credentials";
+            $response["status"] = "Wrong credentials";
         }
     }
 echo json_encode($response);
