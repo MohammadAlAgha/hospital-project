@@ -21,8 +21,11 @@ axios({
   services.forEach((service) => {
     serviceList.innerHTML += ` <option>${service.description}</option>`;
   });
+  serviceList.addEventListener("change", (event) => {
+    selectedService = event.target.value;
+  });
   submitServices.addEventListener("click", () => {
-    savedServices.innerHTML += `<p>${serviceList.innerHTML}</p>`;
+    savedServices.innerHTML += `<p>${selectedService}</p>`;
   });
 });
 
@@ -33,8 +36,11 @@ axios({
   medics.forEach((med) => {
     meds.innerHTML += ` <option>${med.name}</option>`;
   });
+  meds.addEventListener("change", (event) => {
+    selectedMed = event.target.value;
+  });
   submitMedics.addEventListener("click", () => {
-    savedMedics.innerHTML += `<p>${meds.innerHTML}</p>`;
+    savedMedics.innerHTML += `<p>${selectedMed}</p>`;
   });
 });
 axios({
@@ -48,9 +54,7 @@ axios({
 axios({
   url: `${baseUrl}/getrooms.php`,
 }).then((res) => {
-  console.log(res);
   const roomsArray = res.data.rooms;
-  console.log(roomsArray);
   roomsArray.forEach((room) => {
     roomInfo.innerHTML += ` <option>${room.room_number}/Cost:${room.cost_day_usd}/${room.is_vip}</option>`;
   });
