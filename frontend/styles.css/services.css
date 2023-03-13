@@ -55,6 +55,7 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 70px;
 }
 
 .row {
