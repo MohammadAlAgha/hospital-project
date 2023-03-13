@@ -6,6 +6,10 @@ back.addEventListener("click", () => {
   window.location.href = "./admin.html";
 });
 
+if ((wrapper.innerHTML = "")) {
+  state.innerHTML = "There are no requets yet";
+}
+
 axios({
   url: `${baseUrl}/getpatientrequest.php`,
 }).then((res) => {

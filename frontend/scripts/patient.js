@@ -88,9 +88,11 @@ roomInfo.addEventListener("change", (Roomevent) => {
 });
 
 invoices.addEventListener("click", () => {
+  window.location.href = "./invoices.html";
   const medsCollection = document.querySelectorAll("#medsCollection");
   medsArray = [];
   medsCollection.forEach((med) => {
+    console.log(med);
     medsArray.push(med.innerHTML);
   });
   total.medics = medsArray;
@@ -109,5 +111,4 @@ invoices.addEventListener("click", () => {
   });
   total.service = serviceArray;
   localStorage.setItem("invoicesStats", JSON.stringify(total));
-  window.location.href = "./invoices.html";
 });
