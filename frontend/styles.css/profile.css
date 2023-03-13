@@ -112,3 +112,6 @@ label {
 .inputs > .inputs {
   margin: 30px;
 }
+.state {
+  font-family: Arial, Helvetica, sans-serif;
+}
