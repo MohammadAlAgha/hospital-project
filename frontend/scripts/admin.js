@@ -11,3 +11,7 @@ patient.addEventListener("click", () => {
 employee.addEventListener("click", () => {
   window.location.href = "./assignemployee.html";
 });
+
+service.addEventListener("click", () => {
+  window.location.href = "./services.html";
+});

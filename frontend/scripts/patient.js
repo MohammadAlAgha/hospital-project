@@ -109,6 +109,5 @@ invoices.addEventListener("click", () => {
   });
   total.service = serviceArray;
   localStorage.setItem("invoicesStats", JSON.stringify(total));
-
-  // window.location.href = "./invoices.html";
+  window.location.href = "./invoices.html";
 });
