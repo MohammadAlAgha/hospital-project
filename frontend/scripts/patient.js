@@ -88,27 +88,30 @@ roomInfo.addEventListener("change", (Roomevent) => {
 });
 
 invoices.addEventListener("click", () => {
-  window.location.href = "./invoices.html";
   const medsCollection = document.querySelectorAll("#medsCollection");
-  medsArray = [];
+  let medsArray = [];
   medsCollection.forEach((med) => {
-    console.log(med);
     medsArray.push(med.innerHTML);
   });
   total.medics = medsArray;
-  const servicesCollection = document.querySelectorAll("#servicesCollection");
+
   const id = localStorage.getItem("User ID");
   parsed_id = JSON.parse(id);
-  servicesCollection.forEach((service) => {
-    console.log(service.innerHTML);
-    axios
-      .get(
-        `${baseUrl}/saveservices.php?service_id=${service.innerHTML}&patient_id=${parsed_id}`
-      )
-      .then((res) => {
-        console.log(res);
-      });
+  const servicesCollection = document.querySelectorAll("#servicesCollection");
+  let serviceArray = [];
+  servicesCollection.forEach((serv) => {
+    serviceArray.push(serv.innerHTML);
   });
+  total.services = serviceArray;
+
   total.service = serviceArray;
   localStorage.setItem("invoicesStats", JSON.stringify(total));
+  window.location.href = "./invoices.html";
+  axios
+    .get(
+      `${baseUrl}/saveservices.php?service_id=${serv.innerHTML}&patient_id=${parsed_id}`
+    )
+    .then((res) => {
+      console.log(res);
+    });
 });
