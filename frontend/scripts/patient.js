@@ -23,13 +23,13 @@ axios({
 }).then((res) => {
   const services = res.data.services;
   services.forEach((service) => {
-    serviceList.innerHTML += ` <option>${service.description}/${service.cost}$</option>`;
+    serviceList.innerHTML += ` <option value="${service.id}">${service.description}/${service.cost}$</option>`;
   });
   serviceList.addEventListener("change", (event) => {
     selectedService = event.target.value;
   });
   submitServices.addEventListener("click", () => {
-    savedServices.innerHTML += `<p id='servicesCollection'>${selectedService}</p>`;
+    savedServices.innerHTML += `<p value='${selectedService}' id='servicesCollection'>${selectedService}</p>`;
   });
 });
 
@@ -95,12 +95,20 @@ invoices.addEventListener("click", () => {
   });
   total.medics = medsArray;
   const servicesCollection = document.querySelectorAll("#servicesCollection");
-  serviceArray = [];
+  const id = localStorage.getItem("User ID");
+  parsed_id = JSON.parse(id);
   servicesCollection.forEach((service) => {
-    serviceArray.push(service.innerHTML);
+    console.log(service.innerHTML);
+    axios
+      .get(
+        `${baseUrl}/saveservices.php?service_id=${service.innerHTML}&patient_id=${parsed_id}`
+      )
+      .then((res) => {
+        console.log(res);
+      });
   });
   total.service = serviceArray;
   localStorage.setItem("invoicesStats", JSON.stringify(total));
 
-  window.location.href = "./invoices.html";
+  // window.location.href = "./invoices.html";
 });
