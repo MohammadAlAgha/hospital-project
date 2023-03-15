@@ -19,3 +19,6 @@ service.addEventListener("click", () => {
 addEmployee.addEventListener("click", () => {
   window.location.href = "./addEmployee.html";
 });
+stats.addEventListener("click", () => {
+  window.location.href = "./stats.html";
+});
