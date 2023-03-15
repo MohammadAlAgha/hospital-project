@@ -61,6 +61,7 @@ a {
 
 .actions {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   height: 65vh;
   align-items: center;
@@ -73,63 +74,34 @@ a {
   transform: scale(1.1);
 }
 
-.assignPatient {
+.option {
   height: 150px;
   width: 300px;
-  background-image: url(../assets/patient.jfif);
   background-repeat: no-repeat;
   background-blend-mode: multiply;
   background-size: 100%;
-  background-color: rgb(92, 92, 92);
+  background-color: rgb(105, 105, 105);
   color: aliceblue;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.5s;
   cursor: pointer;
+}
+
+.assignPatient {
+  background-image: url(../assets/patient.jfif);
 }
 .assignEmployee {
-  height: 150px;
-  width: 300px;
   background-image: url(../assets/employee.jfif);
-  background-repeat: no-repeat;
-  background-blend-mode: multiply;
-  background-size: 100%;
-  background-color: rgb(92, 92, 92);
-  color: aliceblue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.5s;
-  cursor: pointer;
 }
 .viewServices {
-  height: 150px;
-  width: 300px;
   background-image: url(../assets/services.jpg);
-  background-repeat: no-repeat;
-  background-blend-mode: multiply;
-  background-size: 100%;
-  background-color: rgb(92, 92, 92);
-  color: aliceblue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.5s;
-  cursor: pointer;
 }
 .stats {
-  height: 150px;
-  width: 300px;
   background-image: url(../assets/stats.jpg);
-  background-repeat: no-repeat;
-  background-blend-mode: multiply;
-  background-size: 100% 100%;
-  background-color: rgb(92, 92, 92);
-  color: aliceblue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.5s;
-  cursor: pointer;
+}
+
+.addEmployee {
+  background-image: url(../assets/newEmp.jpg);
 }

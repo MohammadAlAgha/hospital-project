@@ -8,7 +8,7 @@ $email=$_POST['email'];
 $password=$_POST['password'];
 $user_name=$_POST['user_name'];
 $birth=$_POST['birthday'];
-$type=3;
+$type=2;
 
 $uppercase = preg_match('@[A-Z]@', $password);
 $lowercase = preg_match('@[a-z]@', $password);
