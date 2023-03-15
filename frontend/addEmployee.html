@@ -5,33 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Employee</title>
-    <link rel="stylesheet" href="./styles.css/forms.css" />
+    <link rel="stylesheet" href="./styles.css/assignEmployee.css" />
     <link rel="icon" href="./assets/Logo.svg" />
   </head>
   <body>
     <div class="page">
-      <div class="header">
-        <div class="logo"><img src="./assets/Logo.svg" alt="" /></div>
+      <div class="logo">
+        <div class="arrow" id="back">
+          <img src="./assets/arrow-left.svg" alt="" />
+        </div>
+        <div class="center"><img src="./assets/Logo.svg" alt="" /></div>
       </div>
-      <div class="wrapper">
-        <div class="title">Add Employee Info:</div>
-        <div class="inputSignUP">
-          <div class="values">
-            <label for="">Email:</label>
-            <input type="email" id="email" placeholder="Email" />
-            <label for="">Password:</label>
-            <input type="password" id="password" placeholder="Password" />
-            <label for="">Name:</label>
-            <input type="text" id="name" placeholder="Name" />
-            <label for="">Date of Birth:</label>
-            <input type="date" id="date" />
-            <p id="state" class="state"></p>
-          </div>
-          <div class="buttonPlace">
-            <a class="link" href="./login.html"
-              >Already have an account? Login</a
-            >
-            <button id="submit">Submit</button>
+      <div class="centerForm">
+        <div class="wrapper">
+          <div class="title">Add Employee Info:</div>
+          <div class="inputSignUP">
+            <div class="values">
+              <label for="">Email:</label>
+              <input type="email" id="email" placeholder="Email" />
+              <label for="">Password:</label>
+              <input type="password" id="password" placeholder="Password" />
+              <label for="">Name:</label>
+              <input type="text" id="name" placeholder="Name" />
+              <label for="">Date of Birth:</label>
+              <input type="date" id="date" />
+              <p id="state" class="state"></p>
+            </div>
+            <div class="buttonPlace">
+              <a class="link" href="./login.html"
+                >Already have an account? Login</a
+              >
+              <button id="submit">Submit</button>
+            </div>
           </div>
         </div>
       </div>

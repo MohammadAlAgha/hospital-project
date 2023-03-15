@@ -1,0 +1,129 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-y: hidden;
+}
+
+.page {
+  height: 100vh;
+  margin: 15px;
+}
+
+.logo {
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.center {
+  width: 55%;
+  display: flex;
+  justify-content: start;
+}
+.arrow {
+  padding: 20px;
+  width: 45%;
+  display: flex;
+  justify-content: start;
+}
+
+.wrapper {
+  height: 70%;
+  width: 50%;
+  border: 2px rgb(36, 122, 10) solid;
+  box-shadow: 0 5px 15px rgb(36, 122, 10);
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.title {
+  font-size: 40px;
+  color: rgb(36, 122, 10);
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.inputLogin {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 70%;
+}
+
+input {
+  width: 70%;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgb(226, 226, 226);
+  border: 1px rgb(36, 122, 10) solid;
+}
+
+button {
+  background-color: rgb(36, 122, 10);
+  color: aliceblue;
+  padding: 5px;
+  border-radius: 10px;
+  width: 20%;
+  border: 2px rgb(36, 122, 10) solid;
+  box-shadow: 0 5px 15px rgb(36, 122, 10);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.buttonPlace {
+  display: flex;
+  justify-content: space-between;
+}
+
+.values {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 70%;
+}
+
+label {
+  font-size: 20px;
+  color: rgb(36, 122, 10);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.link {
+  color: rgb(36, 122, 10);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.inputSignUP {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80%;
+}
+
+.inputSignUP > .inputs {
+  margin: 30px;
+}
+
+.state {
+  color: red;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.centerForm {
+  display: flex;
+  justify-content: center;
+}

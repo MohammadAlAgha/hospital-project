@@ -4,6 +4,11 @@ const uname = document.getElementById("name");
 const date = document.getElementById("date");
 const submit = document.getElementById("submit");
 const state = document.getElementById("state");
+const back = document.getElementById("back");
+
+back.addEventListener("click", () => {
+  window.location.href = "./admin.html";
+});
 
 submit.addEventListener("click", () => {
   if (email.value && password.value && uname.value && date.value) {
