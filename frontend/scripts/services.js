@@ -39,7 +39,16 @@ axios({
 
   approve.forEach((button) => {
     button.addEventListener("click", () => {
-      console.log(button);
+      service_id = button.classList[2];
+
+      console.log(service_id);
+
+      axios
+        .get(`${baseUrl}/approvedservices.php?id=${service_id}`)
+        .then((res) => {
+          state.innerHTML =
+            "The record is approved, status will be 1 when you refresh";
+        });
     });
   });
   deleted.forEach((button) => {
@@ -50,7 +59,7 @@ axios({
 
       axios.get(`${baseUrl}/removeservice.php?id=${service_id}`).then((res) => {
         state.innerHTML =
-          "The record is deleted it will no longer appear when you refresh";
+          "The record is deleted, it will no longer appear when you refresh";
       });
     });
   });

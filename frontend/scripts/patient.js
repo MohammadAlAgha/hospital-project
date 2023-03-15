@@ -96,22 +96,19 @@ invoices.addEventListener("click", () => {
   total.medics = medsArray;
 
   const id = localStorage.getItem("User ID");
-  parsed_id = JSON.parse(id);
+  const parsed_id = JSON.parse(id);
   const servicesCollection = document.querySelectorAll("#servicesCollection");
-  let serviceArray = [];
   servicesCollection.forEach((serv) => {
-    serviceArray.push(serv.innerHTML);
+    axios
+      .get(
+        `${baseUrl}/saveservices.php?service_id=${serv.innerHTML}&patient_id=${parsed_id}`
+      )
+      .then((res) => {
+        localStorage.setItem("invoicesStats", JSON.stringify(total));
+        window.location.href = "./invoices.html";
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   });
-  total.services = serviceArray;
-
-  total.service = serviceArray;
-  localStorage.setItem("invoicesStats", JSON.stringify(total));
-  window.location.href = "./invoices.html";
-  axios
-    .get(
-      `${baseUrl}/saveservices.php?service_id=${serv.innerHTML}&patient_id=${parsed_id}`
-    )
-    .then((res) => {
-      console.log(res);
-    });
 });

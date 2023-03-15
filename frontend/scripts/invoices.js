@@ -3,6 +3,8 @@ const parsed = JSON.parse(data);
 const back = document.getElementById("back");
 const medInfo = document.getElementById("medInfo");
 const serviceInfo = document.getElementById("serviceInfo");
+const id = localStorage.getItem("User ID");
+const parsed_id = JSON.parse(id);
 
 back.addEventListener("click", () => {
   window.location.href = "./patient.html";
@@ -39,7 +41,17 @@ medInfo.innerHTML = `<h2>Medications Selected:</h2>`;
 parsed.medics.forEach((med) => {
   medInfo.innerHTML += `<p>${med}</p>`;
 });
-serviceInfo.innerHTML = `<h2>Services Selected:</h2>`;
-parsed.service.forEach((serve) => {
-  serviceInfo.innerHTML += `<p>${serve}</p>`;
-});
+
+axios
+  .get(`${baseUrl}/getapprovedservices.php?patient_id=${parsed_id}`)
+  .then((res) => {
+    const serve = res.data.approved;
+    serviceInfo.innerHTML = `<h2>Approved Services:</h2>`;
+    if (typeof serve === "string") {
+      serviceInfo.innerHTML += `<p>${serve}</p>`;
+    } else {
+      serve.forEach((service) => {
+        serviceInfo.innerHTML += `<p>-Service Name:${service.description}/Service Cost:${service.cost}$</p>`;
+      });
+    }
+  });
