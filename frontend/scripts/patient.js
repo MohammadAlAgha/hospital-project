@@ -83,6 +83,7 @@ roomInfo.addEventListener("change", (Roomevent) => {
       total.hospital = hospitalNames.value;
       total.room = roomInfo.value;
       total.bed = bedInfo.value;
+      submitHospital.innerHTML = "Your place is registered!";
     });
   });
 });
