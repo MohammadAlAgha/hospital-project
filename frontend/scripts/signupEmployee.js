@@ -24,7 +24,7 @@ submit.addEventListener("click", () => {
       )
       .then((res) => {
         if (res.data.status == "Sign up was successfull") {
-          window.location.href = "./employee.html";
+          state.innerHTML = "Employee was added";
           localStorage.setItem("User ID", JSON.stringify(res.data.user_id));
         } else state.innerHTML = res.data.status;
       });
